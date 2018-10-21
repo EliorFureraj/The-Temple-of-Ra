@@ -28,10 +28,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
-		public bool canRun = true;
-        public bool bIsGravityOn = true;
+        [SerializeField]
+		private bool canRun = true;
+        //[SerializeField]
+        //private bool bIsGravityOn = true;
+        [SerializeField]
+        private bool canJump = false;
+
         private Camera m_Camera;
-        public bool m_Jump;
+        private bool m_Jump = false;
         private float m_YRotation;
         private Vector2 m_Input;
         private Vector3 m_MoveDir = Vector3.zero;
@@ -80,7 +85,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			{
 				RotateView();
 				// the jump state needs to read here to make sure it is not missed
-				if (!m_Jump)
+				if (canJump && !m_Jump)
 				{
 					m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
 				}
@@ -149,8 +154,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             else
             {
-                if(bIsGravityOn)
-                    m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
+                m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
             }
 			
 

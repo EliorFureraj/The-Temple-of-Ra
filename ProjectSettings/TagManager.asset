@@ -16,6 +16,8 @@ TagManager:
   - Terrain
   - WalkableScene
   - Damageable
+  - Climbable
+  - Ledge
   layers:
   - Default
   - TransparentFX

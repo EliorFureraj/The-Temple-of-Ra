@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour {
 	
 	public void EnablePlayer()
 	{
-		player.GetComponent<FirstPersonController>().isActive = true;
+		//player.GetComponent<FirstPersonController>().isActive = true;
 		player.GetComponent<GunAndMeleeSystem>().enabled = true;
 		player.transform.Find("Body").GetComponent<InputManager>().isActive = true;
 		//player.transform.Find("Body/Hands/CameraHands").GetComponent<InputManager>().isActive = true;
@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour {
 	
 	public void DisablePlayer()
 	{
-		player.GetComponent<FirstPersonController>().isActive = false;
+		//player.GetComponent<FirstPersonController>().isActive = false;
 		player.GetComponent<GunAndMeleeSystem>().enabled = false;
 		player.transform.Find("Body").GetComponent<InputManager>().isActive = false;
 		//player.transform.Find("Body").GetComponent<InputManager>().isActive = false;
