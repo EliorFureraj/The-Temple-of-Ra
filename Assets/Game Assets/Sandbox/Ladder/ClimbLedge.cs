@@ -8,16 +8,16 @@ public class ClimbLedge : MonoBehaviour {
     private Transform ledgePosition;
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            if (ledgePosition == null)
-            {
-                Debug.Log("Ledge Position not defined");
-                return;
-            }
-            other.GetComponent<PlayerController>().ClimbLedge(ledgePosition.position);
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        if (ledgePosition == null)
+    //        {
+    //            Debug.Log("Ledge Position not defined");
+    //            return;
+    //        }
+    //        other.GetComponent<PlayerController>().ClimbLedge(ledgePosition.position);
+    //    }
+    //}
 }

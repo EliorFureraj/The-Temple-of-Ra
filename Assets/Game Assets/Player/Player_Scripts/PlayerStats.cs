@@ -60,9 +60,7 @@ public class PlayerStats : MonoBehaviour
 	private Animator animator;
 
     public bool cheatMode = false;
-	public Animator doorAnimator1;
-	public Animator doorAnimator2;
-	public Animator doorAnimator3;
+
 	
 	void Start() 
 	{
@@ -95,31 +93,14 @@ public class PlayerStats : MonoBehaviour
 			menuChildren = menuCanvas.transform.GetChild(0).GetComponentsInChildren<Graphic>();
 		
 		
-		//if(SceneManager.GetActiveScene().buildIndex == 3)
-		//{
-		//	doorAnimator1 = GameObject.Find("WallISIS").GetComponent<Animator>();
-		//	doorAnimator2 = GameObject.Find("WallSecond").GetComponent<Animator>();
-		//	doorAnimator3 = GameObject.Find("WallFirst").GetComponent<Animator>();
-		//}
 	}
 	
 	void Update () 
 	{
-
-		
 		if(Input.GetButtonDown("Menu"))
 		{
 			OpenMenu(menuToggle);
 		}
-		if(Input.GetKeyDown(KeyCode.V))
-		{
-			GetCrown();
-		}
-		if(Input.GetKeyDown(KeyCode.B))
-		{
-			doorAnimator1.SetBool("Open", true);
-		}
-		
 	}
 	
 	public bool ReturnExplosive()
@@ -128,16 +109,6 @@ public class PlayerStats : MonoBehaviour
 	}
 	
 	
-	public void GetCrown()
-	{
-	//	animator.SetTrigger("GotCrown");
-		// yield return new WaitForSeconds(2);
-		// doorAnimator1.SetTrigger("Open");
-		doorAnimator2.SetBool("Open", true);
-		doorAnimator3.SetBool("Open", true);
-		// StartCoroutine(cameraShake.Shake(4f));
-
-	}
 	
 	public float GetHealth()
 	{
@@ -151,10 +122,7 @@ public class PlayerStats : MonoBehaviour
 		health += adder;
 		if(health > 0)
 		{
-			// if(shock)
-			// {
-				// StartCoroutine(cameraShake.Shake(1f));
-			// }
+
 		}
 		else
 		{	
