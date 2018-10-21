@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: a7ddb82bb18b022418bb2e731db12b67
+timeCreated: 1524457529
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: arm_l
+    100002: arm_r
+    100004: ArmLeftPole
+    100006: ArmRightPole
+    100008: forearm_l
+    100010: forearm_r
+    100012: forearmRoll_l
+    100014: forearmRoll_r
+    100016: FpsArms
+    100018: FpsArms_003
+    100020: FpsArms_2
+    100022: Gun
+    100024: Hammer
+    100026: hand_l
+    100028: hand_r
+    100030: handIK_l
+    100032: handIK_r
+    100034: handSocket_l
+    100036: handSocket_r
+    100038: index1_l
+    100040: index1_r
+    100042: index2_l
+    100044: index2_r
+    100046: index3_l
+    100048: index3_r
+    100050: index4_l
+    100052: index4_r
+    100054: middle1_l
+    100056: middle1_r
+    100058: middle2_l
+    100060: middle2_r
+    100062: middle3_l
+    100064: middle3_r
+    100066: middle4_l
+    100068: middle4_r
+    100070: pinky1_l
+    100072: pinky1_r
+    100074: pinky2_l
+    100076: pinky2_r
+    100078: pinky3_l
+    100080: pinky3_r
+    100082: pinky4_l
+    100084: pinky4_r
+    100086: //RootNode
+    100088: Reference
+    100090: ring1_l
+    100092: ring1_r
+    100094: ring2_l
+    100096: ring2_r
+    100098: ring3_l
+    100100: ring3_r
+    100102: ring4_l
+    100104: ring4_r
+    100106: Root
+    100108: Rotation
+    100110: shoulder_l
+    100112: shoulder_r
+    100114: thumb1_l
+    100116: thumb1_r
+    100118: thumb2_l
+    100120: thumb2_r
+    100122: thumb3_l
+    100124: thumb3_r
+    100126: thumb4_l
+    100128: thumb4_r
+    400000: arm_l
+    400002: arm_r
+    400004: ArmLeftPole
+    400006: ArmRightPole
+    400008: forearm_l
+    400010: forearm_r
+    400012: forearmRoll_l
+    400014: forearmRoll_r
+    400016: FpsArms
+    400018: FpsArms_003
+    400020: FpsArms_2
+    400022: Gun
+    400024: Hammer
+    400026: hand_l
+    400028: hand_r
+    400030: handIK_l
+    400032: handIK_r
+    400034: handSocket_l
+    400036: handSocket_r
+    400038: index1_l
+    400040: index1_r
+    400042: index2_l
+    400044: index2_r
+    400046: index3_l
+    400048: index3_r
+    400050: index4_l
+    400052: index4_r
+    400054: middle1_l
+    400056: middle1_r
+    400058: middle2_l
+    400060: middle2_r
+    400062: middle3_l
+    400064: middle3_r
+    400066: middle4_l
+    400068: middle4_r
+    400070: pinky1_l
+    400072: pinky1_r
+    400074: pinky2_l
+    400076: pinky2_r
+    400078: pinky3_l
+    400080: pinky3_r
+    400082: pinky4_l
+    400084: pinky4_r
+    400086: //RootNode
+    400088: Reference
+    400090: ring1_l
+    400092: ring1_r
+    400094: ring2_l
+    400096: ring2_r
+    400098: ring3_l
+    400100: ring3_r
+    400102: ring4_l
+    400104: ring4_r
+    400106: Root
+    400108: Rotation
+    400110: shoulder_l
+    400112: shoulder_r
+    400114: thumb1_l
+    400116: thumb1_r
+    400118: thumb2_l
+    400120: thumb2_r
+    400122: thumb3_l
+    400124: thumb3_r
+    400126: thumb4_l
+    400128: thumb4_r
+    7400000: Player-TurnSwayLeft
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Player-TurnSwayLeft
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: RightHandMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: FpsArms
+    m_Weight: 0
+  - m_Path: FpsArms/ArmLeftPole
+    m_Weight: 0
+  - m_Path: FpsArms/ArmRightPole
+    m_Weight: 0
+  - m_Path: FpsArms/Gun
+    m_Weight: 0
+  - m_Path: FpsArms/Gun/Root
+    m_Weight: 0
+  - m_Path: FpsArms/Gun/Root/Hammer
+    m_Weight: 0
+  - m_Path: FpsArms/Gun/Root/Rotation
+    m_Weight: 0
+  - m_Path: FpsArms/handIK_l
+    m_Weight: 0
+  - m_Path: FpsArms/handIK_r
+    m_Weight: 0
+  - m_Path: FpsArms/Reference
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/FpsArms_003
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/handSocket_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/index1_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/index1_l/index2_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/index1_l/index2_l/index3_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/index1_l/index2_l/index3_l/index4_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/middle1_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/middle1_l/middle2_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/middle1_l/middle2_l/middle3_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/middle1_l/middle2_l/middle3_l/middle4_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/pinky1_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/pinky1_l/pinky2_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/pinky1_l/pinky2_l/pinky3_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/pinky1_l/pinky2_l/pinky3_l/pinky4_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/ring1_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/ring1_l/ring2_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/ring1_l/ring2_l/ring3_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/ring1_l/ring2_l/ring3_l/ring4_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/thumb1_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/thumb1_l/thumb2_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/thumb1_l/thumb2_l/thumb3_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/thumb4_l
+    m_Weight: 0
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/handSocket_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/index1_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/index1_r/index2_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/index1_r/index2_r/index3_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/index1_r/index2_r/index3_r/index4_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/middle1_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/middle1_r/middle2_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/middle1_r/middle2_r/middle3_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/middle1_r/middle2_r/middle3_r/middle4_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/pinky1_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/pinky1_r/pinky2_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/pinky1_r/pinky2_r/pinky3_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/pinky1_r/pinky2_r/pinky3_r/pinky4_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/ring1_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/ring1_r/ring2_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/ring1_r/ring2_r/ring3_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/ring1_r/ring2_r/ring3_r/ring4_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/thumb1_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/thumb1_r/thumb2_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/thumb1_r/thumb2_r/thumb3_r
+    m_Weight: 1
+  - m_Path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/thumb4_r
+    m_Weight: 1

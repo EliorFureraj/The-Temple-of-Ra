@@ -1,0 +1,335 @@
+fileFormatVersion: 2
+guid: bc7d6f025deb3504c838539c093b3baf
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: arm_l
+    100002: arm_r
+    100004: Bone
+    100006: Bone_001
+    100008: Camera
+    100010: Cube
+    100012: forearm_l
+    100014: forearm_r
+    100016: forearmRoll_l
+    100018: forearmRoll_r
+    100020: FpsArms
+    100022: FpsArms_003
+    100024: FpsArms_2
+    100026: FpsArms_3
+    100028: Gun
+    100030: GunMesh
+    100032: Hammer
+    100034: hand_l
+    100036: hand_r
+    100038: handIK_l
+    100040: handIK_r
+    100042: handSocket_l
+    100044: handSocket_r
+    100046: index1_l
+    100048: index1_r
+    100050: index2_l
+    100052: index2_r
+    100054: index3_l
+    100056: index3_r
+    100058: index4_l
+    100060: index4_r
+    100062: Lamp
+    100064: Lamp_001
+    100066: middle1_l
+    100068: middle1_r
+    100070: middle2_l
+    100072: middle2_r
+    100074: middle3_l
+    100076: middle3_r
+    100078: middle4_l
+    100080: middle4_r
+    100082: Neutre
+    100084: pinky1_l
+    100086: pinky1_r
+    100088: pinky2_l
+    100090: pinky2_r
+    100092: pinky3_l
+    100094: pinky3_r
+    100096: pinky4_l
+    100098: pinky4_r
+    100100: //RootNode
+    100102: Reference
+    100104: ring1_l
+    100106: ring1_r
+    100108: ring2_l
+    100110: ring2_r
+    100112: ring3_l
+    100114: ring3_r
+    100116: ring4_l
+    100118: ring4_r
+    100120: Root
+    100122: Rotation
+    100124: shoulder_l
+    100126: shoulder_r
+    100128: thumb1_l
+    100130: thumb1_r
+    100132: thumb2_l
+    100134: thumb2_r
+    100136: thumb3_l
+    100138: thumb3_r
+    100140: thumb4_l
+    100142: thumb4_r
+    400000: arm_l
+    400002: arm_r
+    400004: Bone
+    400006: Bone_001
+    400008: Camera
+    400010: Cube
+    400012: forearm_l
+    400014: forearm_r
+    400016: forearmRoll_l
+    400018: forearmRoll_r
+    400020: FpsArms
+    400022: FpsArms_003
+    400024: FpsArms_2
+    400026: FpsArms_3
+    400028: Gun
+    400030: GunMesh
+    400032: Hammer
+    400034: hand_l
+    400036: hand_r
+    400038: handIK_l
+    400040: handIK_r
+    400042: handSocket_l
+    400044: handSocket_r
+    400046: index1_l
+    400048: index1_r
+    400050: index2_l
+    400052: index2_r
+    400054: index3_l
+    400056: index3_r
+    400058: index4_l
+    400060: index4_r
+    400062: Lamp
+    400064: Lamp_001
+    400066: middle1_l
+    400068: middle1_r
+    400070: middle2_l
+    400072: middle2_r
+    400074: middle3_l
+    400076: middle3_r
+    400078: middle4_l
+    400080: middle4_r
+    400082: Neutre
+    400084: pinky1_l
+    400086: pinky1_r
+    400088: pinky2_l
+    400090: pinky2_r
+    400092: pinky3_l
+    400094: pinky3_r
+    400096: pinky4_l
+    400098: pinky4_r
+    400100: //RootNode
+    400102: Reference
+    400104: ring1_l
+    400106: ring1_r
+    400108: ring2_l
+    400110: ring2_r
+    400112: ring3_l
+    400114: ring3_r
+    400116: ring4_l
+    400118: ring4_r
+    400120: Root
+    400122: Rotation
+    400124: shoulder_l
+    400126: shoulder_r
+    400128: thumb1_l
+    400130: thumb1_r
+    400132: thumb2_l
+    400134: thumb2_r
+    400136: thumb3_l
+    400138: thumb3_r
+    400140: thumb4_l
+    400142: thumb4_r
+    2000000: Camera
+    4300000: FpsArms_3
+    4300002: Cube
+    4300004: GunMesh
+    7400000: Default Take
+    7400002: Player-Firing
+    7400004: Gun-Firing
+    7400006: GunAction
+    7400008: Player-Idle1
+    7400010: Player-Idle2
+    7400012: Idle3
+    7400014: PoseLib
+    7400016: Player-Reload
+    7400018: Gun-Reload
+    7400020: Player-Slash
+    7400022: Slash1
+    7400024: Player-SlashFlick
+    7400026: Player-SlashLeft
+    9500000: //RootNode
+    10800000: Lamp
+    10800002: Lamp_001
+    13700000: Cube
+    13700002: FpsArms_3
+    13700004: GunMesh
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArmsTex__ArmsTexD_jpg
+    second: {fileID: 2100000, guid: 0bd378b9db24578488fb0466b5501c86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__Handle
+    second: {fileID: 2100000, guid: 526df1564ad5e084d94fb96b6aebb050, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__Metal
+    second: {fileID: 2100000, guid: ff4916b31a7fbec4498651ddd8e5aa00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__0039-bronze-metal-texture-seamless_jpg
+    second: {fileID: 2100000, guid: 9f15b4a41b50f7e4796a5d425e55c270, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths:
+    - FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/handSocket_l
+    - FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/handSocket_r
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Gun-Firing
+      takeName: Firing-Gun
+      firstFrame: 0
+      lastFrame: 11
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Gun-Reload
+      takeName: Reload--Gun
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

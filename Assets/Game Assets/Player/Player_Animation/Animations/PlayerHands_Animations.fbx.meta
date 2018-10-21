@@ -1,0 +1,862 @@
+fileFormatVersion: 2
+guid: 9abd9efc273f7a842ab36a00fb2bf01a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: arm_l
+    100002: arm_r
+    100004: ArmLeftPole
+    100006: ArmRightPole
+    100008: forearm_l
+    100010: forearm_r
+    100012: forearmRoll_l
+    100014: forearmRoll_r
+    100016: FpsArms
+    100018: FpsArms_003
+    100020: FpsArms_2
+    100022: Gun
+    100024: Hammer
+    100026: hand_l
+    100028: hand_r
+    100030: handIK_l
+    100032: handIK_r
+    100034: handSocket_l
+    100036: handSocket_r
+    100038: index1_l
+    100040: index1_r
+    100042: index2_l
+    100044: index2_r
+    100046: index3_l
+    100048: index3_r
+    100050: index4_l
+    100052: index4_r
+    100054: middle1_l
+    100056: middle1_r
+    100058: middle2_l
+    100060: middle2_r
+    100062: middle3_l
+    100064: middle3_r
+    100066: middle4_l
+    100068: middle4_r
+    100070: pinky1_l
+    100072: pinky1_r
+    100074: pinky2_l
+    100076: pinky2_r
+    100078: pinky3_l
+    100080: pinky3_r
+    100082: pinky4_l
+    100084: pinky4_r
+    100086: //RootNode
+    100088: Reference
+    100090: ring1_l
+    100092: ring1_r
+    100094: ring2_l
+    100096: ring2_r
+    100098: ring3_l
+    100100: ring3_r
+    100102: ring4_l
+    100104: ring4_r
+    100106: Root
+    100108: Rotation
+    100110: shoulder_l
+    100112: shoulder_r
+    100114: thumb1_l
+    100116: thumb1_r
+    100118: thumb2_l
+    100120: thumb2_r
+    100122: thumb3_l
+    100124: thumb3_r
+    100126: thumb4_l
+    100128: thumb4_r
+    400000: arm_l
+    400002: arm_r
+    400004: ArmLeftPole
+    400006: ArmRightPole
+    400008: forearm_l
+    400010: forearm_r
+    400012: forearmRoll_l
+    400014: forearmRoll_r
+    400016: FpsArms
+    400018: FpsArms_003
+    400020: FpsArms_2
+    400022: Gun
+    400024: Hammer
+    400026: hand_l
+    400028: hand_r
+    400030: handIK_l
+    400032: handIK_r
+    400034: handSocket_l
+    400036: handSocket_r
+    400038: index1_l
+    400040: index1_r
+    400042: index2_l
+    400044: index2_r
+    400046: index3_l
+    400048: index3_r
+    400050: index4_l
+    400052: index4_r
+    400054: middle1_l
+    400056: middle1_r
+    400058: middle2_l
+    400060: middle2_r
+    400062: middle3_l
+    400064: middle3_r
+    400066: middle4_l
+    400068: middle4_r
+    400070: pinky1_l
+    400072: pinky1_r
+    400074: pinky2_l
+    400076: pinky2_r
+    400078: pinky3_l
+    400080: pinky3_r
+    400082: pinky4_l
+    400084: pinky4_r
+    400086: //RootNode
+    400088: Reference
+    400090: ring1_l
+    400092: ring1_r
+    400094: ring2_l
+    400096: ring2_r
+    400098: ring3_l
+    400100: ring3_r
+    400102: ring4_l
+    400104: ring4_r
+    400106: Root
+    400108: Rotation
+    400110: shoulder_l
+    400112: shoulder_r
+    400114: thumb1_l
+    400116: thumb1_r
+    400118: thumb2_l
+    400120: thumb2_r
+    400122: thumb3_l
+    400124: thumb3_r
+    400126: thumb4_l
+    400128: thumb4_r
+    7400000: Default Take
+    7400002: Firing
+    7400004: Firing-Gun
+    7400006: Firing-Gun_001
+    7400008: Firing_001
+    7400010: GunAction
+    7400012: Player-Idle1
+    7400014: Player-Idle2
+    7400016: Idle3
+    7400018: Khopesh-PullShield
+    7400020: Khopesh-SlashFlickStart
+    7400022: Khopesh-SlashHit
+    7400024: Khopesh-SlashLeftHit
+    7400026: Khopesh-SlashLeftMiss
+    7400028: Khopesh-SlashLeftStart
+    7400030: Khopesh-SlashMiss
+    7400032: Khopesh-SlashStart
+    7400034: Khopesh-Stab
+    7400036: PoseLib
+    7400038: Reload
+    7400040: Reload--Gun
+    7400042: Slash1
+    7400044: Khopesh-SlashFlickHit
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Firing
+      takeName: Firing
+      firstFrame: 0
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 1
+        functionName: AllowShooting
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: FpsArms
+        weight: 0
+      - path: FpsArms/ArmLeftPole
+        weight: 0
+      - path: FpsArms/ArmRightPole
+        weight: 0
+      - path: FpsArms/Gun
+        weight: 0
+      - path: FpsArms/Gun/Root
+        weight: 0
+      - path: FpsArms/Gun/Root/Hammer
+        weight: 0
+      - path: FpsArms/Gun/Root/Rotation
+        weight: 0
+      - path: FpsArms/handIK_l
+        weight: 0
+      - path: FpsArms/handIK_r
+        weight: 0
+      - path: FpsArms/Reference
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/FpsArms_003
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/handSocket_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/index1_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/index1_l/index2_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/index1_l/index2_l/index3_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/index1_l/index2_l/index3_l/index4_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/middle1_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/middle1_l/middle2_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/middle1_l/middle2_l/middle3_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/middle1_l/middle2_l/middle3_l/middle4_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/pinky1_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/pinky1_l/pinky2_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/pinky1_l/pinky2_l/pinky3_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/pinky1_l/pinky2_l/pinky3_l/pinky4_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/ring1_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/ring1_l/ring2_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/ring1_l/ring2_l/ring3_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/ring1_l/ring2_l/ring3_l/ring4_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/thumb1_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/thumb1_l/thumb2_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/thumb1_l/thumb2_l/thumb3_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_l/arm_l/forearm_l/forearmRoll_l/hand_l/thumb4_l
+        weight: 0
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/handSocket_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/index1_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/index1_r/index2_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/index1_r/index2_r/index3_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/index1_r/index2_r/index3_r/index4_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/middle1_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/middle1_r/middle2_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/middle1_r/middle2_r/middle3_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/middle1_r/middle2_r/middle3_r/middle4_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/pinky1_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/pinky1_r/pinky2_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/pinky1_r/pinky2_r/pinky3_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/pinky1_r/pinky2_r/pinky3_r/pinky4_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/ring1_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/ring1_r/ring2_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/ring1_r/ring2_r/ring3_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/ring1_r/ring2_r/ring3_r/ring4_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/thumb1_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/thumb1_r/thumb2_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/thumb1_r/thumb2_r/thumb3_r
+        weight: 1
+      - path: FpsArms/Reference/FpsArms_2/shoulder_r/arm_r/forearm_r/forearmRoll_r/hand_r/thumb4_r
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 5f4b118b46282a341b22cabc2e9a5985, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Player-Idle2
+      takeName: Idle2
+      firstFrame: 37
+      lastFrame: 89
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Khopesh-PullShield
+      takeName: Khopesh-PullShield
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.51754385
+        functionName: SetInComboWindow
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
+      - time: 1
+        functionName: SetInComboWindow
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 2
+        messageOptions: 0
+      - time: 0.7807692
+        functionName: EndSlash
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 2
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Khopesh-SlashFlickStart
+      takeName: Khopesh-SlashFlick
+      firstFrame: 0
+      lastFrame: 43
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.42663044
+        functionName: DealDamageSlash
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Khopesh-SlashHit
+      takeName: Khopesh-SlashHit
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.7678813
+        functionName: EndSlash
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Khopesh-SlashLeftHit
+      takeName: Khopesh-SlashLeftHit
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.8346154
+        functionName: EndSlash
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Khopesh-SlashLeftMiss
+      takeName: Khopesh-SlashLeftMiss
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.7923077
+        functionName: EndSlash
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Khopesh-SlashLeftStart
+      takeName: Khopesh-SlashLeftStart
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Khopesh-SlashMiss
+      takeName: Khopesh-SlashMiss
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.794197
+        functionName: EndSlash
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Khopesh-SlashStart
+      takeName: Khopesh-SlashStart
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Khopesh-Stab
+      takeName: Khopesh-Stab
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.95769227
+        functionName: EndSlash
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.3653846
+        functionName: DealDamageSlash
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Reload
+      takeName: Reload
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.6246289
+        functionName: ReloadTimer
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.95831925
+        functionName: AllowShooting
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Player-Idle1
+      takeName: Idle1
+      firstFrame: 0
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Khopesh-SlashFlickHit
+      takeName: Khopesh-SlashFlick
+      firstFrame: 42
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.89230776
+        functionName: EndSlash
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

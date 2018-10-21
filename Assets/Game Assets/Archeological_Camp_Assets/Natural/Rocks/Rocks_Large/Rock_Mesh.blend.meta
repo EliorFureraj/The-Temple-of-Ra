@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: 81f63453370f85f4b8d626a6ec8211c9
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: HumanScale
+    100002: RockL1
+    100004: RockL2
+    100006: RockL3
+    100008: RockL4
+    100010: RockL5
+    100012: RockM
+    100014: RockS
+    100016: //RootNode
+    400000: HumanScale
+    400002: RockL1
+    400004: RockL2
+    400006: RockL3
+    400008: RockL4
+    400010: RockL5
+    400012: RockM
+    400014: RockS
+    400016: //RootNode
+    2300000: HumanScale
+    2300002: RockL1
+    2300004: RockL2
+    2300006: RockL3
+    2300008: RockL4
+    2300010: RockL5
+    2300012: RockM
+    2300014: RockS
+    3300000: HumanScale
+    3300002: RockL1
+    3300004: RockL2
+    3300006: RockL3
+    3300008: RockL4
+    3300010: RockL5
+    3300012: RockM
+    3300014: RockS
+    4300000: RockL3
+    4300002: RockM
+    4300004: RockS
+    4300006: RockL5
+    4300008: RockL4
+    4300010: RockL2
+    4300012: RockL1
+    4300014: HumanScale
+    6400000: HumanScale
+    6400002: RockL1
+    6400004: RockL2
+    6400006: RockL3
+    6400008: RockL4
+    6400010: RockL5
+    6400012: RockM
+    6400014: RockS
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 01_-_Default
+    second: {fileID: 2100000, guid: d2b6e1639244dc145a10eb4528cc9c8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: checker__Seamles_rock_png
+    second: {fileID: 2100000, guid: dc01d8940c20e334e97461473d6487a5, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
