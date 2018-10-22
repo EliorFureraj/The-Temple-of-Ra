@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     private bool bIsWalking = false;
     private bool bIsClimbing = false;
 
+    public bool receivesInput = true;
     //Movement Variables
     [SerializeField]
     private float m_JogSpeed = 3;
@@ -49,11 +50,15 @@ public class PlayerController : MonoBehaviour {
     private bool drop = false;
     private Vector3 lastPointOnWall;
     private bool bIsTouchingClimbable = false;
+    private LedgeMarker currentLedgeMarker = null;
+    
     //References
     private CharacterController charController;
     [SerializeField]
     private CameraController cameraController;
     //Set up variables
+
+
     private void Start()
     {
         charController = GetComponent<CharacterController>();
@@ -66,15 +71,8 @@ public class PlayerController : MonoBehaviour {
     //Main Tick loop
     private void FixedUpdate()
     {
-        Input();
-
-        if (!bIsClimbing)
-        {
-            if (drop)
-                drop = false;
-            AttachToClimbableWall();
-        }
-
+        if(receivesInput)
+            GetInput();
         m_MoveSpeed = bIsWalking ? m_WalkSpeed : m_JogSpeed;
 
         if (!charController.isGrounded && b_WasGroundedLastFrame)
@@ -83,65 +81,78 @@ public class PlayerController : MonoBehaviour {
         //Check if player is climbing and move according to climb scheme (in y-x plane);
         if (bIsClimbing)
         {
-            ClimbMove();
-            if (charController.isGrounded && inputY < 0)
-            {
-                Drop();
-                m_MoveVector += transform.forward * -2; 
-            }
-            if (drop)
-            {
-                Drop();
-            }
-            if (IsStillOnClimbableWall())
-            {
-                if (IsNearLedge())
-                {
-                    ClimbLedge(lastPointOnWall);
-                }
-            }
-            else
-            {
-                Drop();
-            }
+            Climb();
         }
-        //Check if player is in contact with ground, and move appropriately (in x-z plane)
-        else if (charController.isGrounded)
-        {
-            GroundMove();
-        }
-        //If Falling, allow some control
         else
         {
-            AirMove();
-        }
 
+            if (IsStandingOnDescentMarker())
+            {
+                //Debug.Log("Standing on Descent Marker");
+                if (Input.GetButtonDown("Activate"))
+                {
+                    StartCoroutine(MovePlayerToDescentPosition());
+                }
+            }
+
+            //Check if player is in contact with ground, and move appropriately (in x-z plane)
+            if (charController.isGrounded)
+            {
+                SearchForClimbableSurface();
+                GroundMove();
+            }
+            //If Falling, allow some control
+            else
+            {
+                AirMove();
+            }
+        }
         charController.Move(m_MoveVector * Time.fixedDeltaTime);
         b_WasGroundedLastFrame = charController.isGrounded;
     }
 
-    //Climbing Functions
-    private void AttachToClimbableWall()
+    private void Climb()
     {
-        
+        ClimbMove();
+        if (charController.isGrounded && inputY < 0)
+        {
+            Drop();
+            AddVelocity(transform.forward * -2, m_MoveSpeed);
+        }
+        if (drop)
+        {
+            Drop();
+        }
+        if (IsStillOnClimbableWall())
+        {
+            if (IsNearLedge())
+            {
+                ClimbLedge(lastPointOnWall);
+            }
+        }
+        else
+        {
+            Drop();
+        }
+    }
+    //Climbing Functions
+    private void SearchForClimbableSurface()
+    {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 2))
+        if (bIsTouchingClimbable && Physics.Raycast(transform.position, transform.forward, out hit, 2))
         {
             if (hit.collider.CompareTag("Climbable"))
             {
-                if (bIsTouchingClimbable && charController.isGrounded)
-                {
-                    StartCoroutine(TweenToPosition(transform, hit.point + hit.normal.normalized * (charController.radius + 0.2f) + transform.up * 0.7f, 0.7f, stickToClimbableSpeed));
                     bIsClimbing = true;
                     bIsTouchingClimbable = false;
-                }
             }
         }
     }
     private bool IsStillOnClimbableWall()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 2))
+        Debug.DrawRay(transform.position, transform.forward,Color.blue);
+        if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
             return hit.collider.CompareTag("Climbable");
         }
@@ -156,7 +167,8 @@ public class PlayerController : MonoBehaviour {
         //All but the player layer
         int playerBitmask = ~(1 << LayerMask.NameToLayer("Player"));
 
-        Ray ray = new Ray(transform.position, (transform.forward + transform.up).normalized);
+        Ray ray = new Ray(transform.position, (transform.forward + transform.up / 5).normalized);
+        Debug.DrawRay(ray.origin, ray.direction, Color.red);
         if (Physics.Raycast(ray, out hit, 3, playerBitmask))
         {
             if (!hit.collider.CompareTag("Climbable"))
@@ -176,31 +188,81 @@ public class PlayerController : MonoBehaviour {
     }
     private void ClimbLedge(Vector3 ledgePoint)
     {
-        Vector3 wantedPos1 = transform.position + new Vector3(0, ledgePoint.y - transform.position.y, 0);
-        Vector3 wantedPos2 = wantedPos1 + transform.up * 0.5f + transform.forward * 1.5f;
-        Queue<TweenToWaypoint> waypointQueue = new Queue<TweenToWaypoint>();
-        waypointQueue.Enqueue(new TweenToWaypoint(wantedPos1, 0.8f));
-        waypointQueue.Enqueue(new TweenToWaypoint(wantedPos2, 0.4f));
-        StartCoroutine(TweenPosQueue(transform, waypointQueue));
+        Vector3 target = ledgePoint + transform.up * 2 + transform.forward * 3;
+        Vector3 addVec = target - transform.position;
+        AddVelocity(addVec, 5);
+        Drop();
+
+        ////Using Old method of Tweening player to proper position is very choppy
+        //Vector3 wantedPos1 = transform.position + new Vector3(0, ledgePoint.y - transform.position.y, 0);
+        //Vector3 wantedPos2 = wantedPos1 + transform.up * 0.5f + transform.forward * 1.5f;
+        //Queue<TweenToWaypoint> waypointQueue = new Queue<TweenToWaypoint>();
+        //waypointQueue.Enqueue(new TweenToWaypoint(wantedPos1, 0.8f));
+        //waypointQueue.Enqueue(new TweenToWaypoint(wantedPos2, 0.4f));
+        //StartCoroutine(TweenPosQueue(transform, waypointQueue));
     }
     private void Drop()
     {
+        if (!bIsClimbing)
+        {
+            drop = false;
+            return;
+        }
         bIsClimbing = false;
         drop = false;
     }
 
-    
-    //Read input from Input class
-    private void Input()
+    private bool IsStandingOnDescentMarker()
     {
-        if (UnityEngine.Input.GetButtonDown("Walk"))
+        if (!bIsTouchingClimbable)
+            return false;
+        int playerBitmask = ~(1 << LayerMask.NameToLayer("Player"));
+        RaycastHit hit;
+        Ray ray = new Ray(transform.position, transform.up * -1);
+        if (Physics.Raycast(ray, out hit, 2, playerBitmask, QueryTriggerInteraction.Collide))
+        {
+            if(hit.collider.CompareTag("Climbable"))
+            {
+                currentLedgeMarker = hit.collider.GetComponent<LedgeMarker>();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private IEnumerator MovePlayerToDescentPosition()
+    {
+        Debug.Log("In coroutine");
+        receivesInput = false;
+        Vector3 pos = currentLedgeMarker.GetLedgePosition().position;
+
+        cameraController.LookAtTransform(currentLedgeMarker.GetLedgeLook().position, 1f);
+
+        Queue<TweenToWaypoint> qt = new Queue<TweenToWaypoint>();
+        TweenToWaypoint t1 = new TweenToWaypoint(new Vector3(pos.x, transform.position.y + 0.4f, pos.z), 0.3f);
+        TweenToWaypoint t2 = new TweenToWaypoint(pos, 0.7f);
+        qt.Enqueue(t1);
+        qt.Enqueue(t2);
+
+        bIsClimbing = true;
+        yield return StartCoroutine(TweenPosQueue(transform, qt));
+        bIsClimbing = true;
+
+        receivesInput = true;
+    }
+
+    //Read input from Input class
+    private void GetInput()
+    { 
+        if (Input.GetButtonDown("Walk"))
             bIsWalking = true;
-        if (UnityEngine.Input.GetButtonUp("Walk"))
+        if (Input.GetButtonUp("Walk"))
             bIsWalking = false;
-        inputX = UnityEngine.Input.GetAxis("Horizontal");
-        inputY = UnityEngine.Input.GetAxis("Vertical");
-        if(UnityEngine.Input.GetButtonDown("Jump"))
+        inputX = Input.GetAxis("Horizontal");
+        inputY = Input.GetAxis("Vertical");
+        if (Input.GetButtonDown("Jump"))
             drop = true;
+
     }
 
     //Movement Schemes, called every Tick
@@ -289,15 +351,23 @@ public class PlayerController : MonoBehaviour {
         if (Vector3.Dot(surfaceNormal, m_MoveVector) < 0 && (projY <= Mathf.Sin(surfAngleThreshold * Mathf.Deg2Rad)))
             m_MoveVector = Vector3.ProjectOnPlane(m_MoveVector, surfaceNormal);
 
-        if (m_MoveVector.magnitude > (m_MoveSpeed))
+        //Keep the velocity in check
+        if (m_MoveVector.sqrMagnitude > (m_MoveSpeed * m_MoveSpeed))
             m_MoveVector = m_MoveVector.normalized * m_MoveSpeed;
+
         if (hit.collider.CompareTag("Climbable") && bIsClimbing == false)
         {
-            if (Vector3.Dot(m_MoveVector.normalized, hit.normal.normalized) < 0)
-                bIsTouchingClimbable = true;
+            bIsTouchingClimbable = true;
         }
     }
 
+    //Use with care, directly modifies the vector used by Move function
+    private void AddVelocity(Vector3 addVector, float maxSpeed)
+    {
+        m_MoveVector += addVector;
+        if(m_MoveVector.magnitude > maxSpeed)
+        m_MoveVector = m_MoveVector.normalized * maxSpeed;
+    }
 
     private struct TweenToWaypoint
     {

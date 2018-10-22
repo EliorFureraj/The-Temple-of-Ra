@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject playerPrefab;
 	public GameObject flyPrefab;
 	public GameObject playerSpawn;
-	public CanvasSingleton canvas;
+    public CameraController camController;
+    public CanvasSingleton canvas;
 	
 	[System.NonSerialized]
 	public bool[] exits;
@@ -66,7 +67,9 @@ public class GameManager : MonoBehaviour {
 		}
         player = playerObj;
 		handCamera = player.transform.Find("Body/Hands/CameraHands").GetComponent<Camera>();
-		DisablePlayer();
+        camController = player.transform.Find("Body/Camera").GetComponent<CameraController>();
+
+        DisablePlayer();
 		
 		if(GameObject.Find("Canvas") != null)
 		{
@@ -80,6 +83,8 @@ public class GameManager : MonoBehaviour {
 			canvas = canvasObj.GetComponent<CanvasSingleton>();
 			loadBar = canvas.loadBar;
 		}
+
+
 		SetCursorLock(true);
 	}
 	
@@ -136,26 +141,27 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		Camera.main.fieldOfView = Mathf.Clamp(currentFOV, 50, 80);
-		handCamera.fieldOfView = Mathf.Clamp(currentFOV, 20, 60);
+		//Camera.main.fieldOfView = Mathf.Clamp(currentFOV, 50, 80);
+		//handCamera.fieldOfView = Mathf.Clamp(currentFOV, 20, 60);
 	}
 	
 	public void EnablePlayer()
 	{
-		//player.GetComponent<FirstPersonController>().isActive = true;
-		player.GetComponent<GunAndMeleeSystem>().enabled = true;
+        player.GetComponent<PlayerController>().receivesInput = true;
+        player.GetComponent<GunAndMeleeSystem>().enabled = true;
 		player.transform.Find("Body").GetComponent<InputManager>().isActive = true;
-		//player.transform.Find("Body/Hands/CameraHands").GetComponent<InputManager>().isActive = true;
-		StartCoroutine("Delay");
+        camController.cameraControlState = CameraController.CameraControl.PlayerControlled;
+
+        StartCoroutine("Delay");
 	}
 	
 	public void DisablePlayer()
 	{
-		//player.GetComponent<FirstPersonController>().isActive = false;
-		player.GetComponent<GunAndMeleeSystem>().enabled = false;
+        player.GetComponent<PlayerController>().receivesInput = false;
+        player.GetComponent<GunAndMeleeSystem>().enabled = false;
 		player.transform.Find("Body").GetComponent<InputManager>().isActive = false;
-		//player.transform.Find("Body").GetComponent<InputManager>().isActive = false;
-		AudioListener.volume = 0f;
+        camController.cameraControlState = CameraController.CameraControl.Disabled;
+        AudioListener.volume = 0f;
 	}
 	
 	public void StopTime()
