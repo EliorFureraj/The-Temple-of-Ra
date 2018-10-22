@@ -4,12 +4,17 @@ The Temple of Ra, a first person action game about fighting mummies.
 PlayerController and CameraController fully working.
 Functionality of Unity FirstPersonController successfully replicated and extended to support climbing ladders, 
 or any vertical surface with the appropriate tag. 
-This new system should be a bit easier to modify and extend (because I know how it works haha).
+This new system should be a bit easier to modify and extend.
+Player can now climb down ladders/walls.
+Look at function for the CameraController for cinematic and gameplay purposes implemented
 
 TODO: 
--Implement a look at function for the CameraController for cinematic and gameplay purposes.
--Complete climbing mechanic by adding a way to climb down Climbables when at the top.
+-Fix Visual Glitch when climbing down ladders.
+-Fix bug, where while climbing down the ladder, if you look down, you fall off.
+-Make ladder/wall climbing independent of camera (y rotation of player), but have vision constricted to 180 degrees.
+-Add a tutorial for the game.
 
+Future TODO:
 -Add sounds to mummies:
   -Sounds when shot (sand pouring) + groan
   -Sound when they first notice you (some sort of surprised groad)
