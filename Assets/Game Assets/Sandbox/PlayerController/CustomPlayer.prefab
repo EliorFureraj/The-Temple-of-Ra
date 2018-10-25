@@ -454,7 +454,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1942172287492244}
   m_LocalRotation: {x: -0, y: 0.47481808, z: -0, w: 0.880084}
-  m_LocalPosition: {x: 30.601673, y: 12.802463, z: -43.261135}
+  m_LocalPosition: {x: -19.623121, y: 6.5029774, z: -36.827793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4562712840791238}
@@ -1066,6 +1066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3416ce9ca97e44e82a96c612aaefd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  receivesInput: 1
   m_JogSpeed: 3
   m_WalkSpeed: 1.5
   m_ClimbSpeed: 1
@@ -1116,6 +1117,9 @@ MonoBehaviour:
   sensitivity: 2
   minX: -89
   maxX: 89
+  minY: -89
+  maxY: 89
+  cameraControlState: 2
   playerTransform: {fileID: 4795104161068006}
 --- !u!114 &114919953035254024
 MonoBehaviour:

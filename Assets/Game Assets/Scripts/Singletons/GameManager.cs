@@ -46,10 +46,6 @@ public class GameManager : MonoBehaviour {
 		{
             Destroy(gameObject);
         }
-	}
-	
-	void Start()
-	{
 		Scene scene = SceneManager.GetActiveScene();
 		currentscene = scene.buildIndex;
 		
@@ -69,7 +65,7 @@ public class GameManager : MonoBehaviour {
 		handCamera = player.transform.Find("Body/Hands/CameraHands").GetComponent<Camera>();
         camController = player.transform.Find("Body/Camera").GetComponent<CameraController>();
 
-        DisablePlayer();
+
 		
 		if(GameObject.Find("Canvas") != null)
 		{
@@ -84,8 +80,8 @@ public class GameManager : MonoBehaviour {
 			loadBar = canvas.loadBar;
 		}
 
-
-		SetCursorLock(true);
+        DisablePlayer();
+        SetCursorLock(true);
 	}
 	
 	IEnumerator Delay()

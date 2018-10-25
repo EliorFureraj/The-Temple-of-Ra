@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private AnimationCurve stickToClimbableSpeed;
 
-
+    int playerBitmask;
 
     //Internal Variables
     private Vector3 m_MoveVector;
@@ -51,7 +51,10 @@ public class PlayerController : MonoBehaviour {
     private Vector3 lastPointOnWall;
     private bool bIsTouchingClimbable = false;
     private LedgeMarker currentLedgeMarker = null;
-    
+    private bool bBeingPutInDescentPos = false;
+
+    private bool overridenAddVelocity = false;
+    private Vector3 addMoveVector;
     //References
     private CharacterController charController;
     [SerializeField]
@@ -66,6 +69,8 @@ public class PlayerController : MonoBehaviour {
             Debug.LogError("Character Controller not set up on Player!");
         if (cameraController == null)
             Debug.LogError("Camera Controller reference not set up in PlayerController!");
+
+        playerBitmask = ~(1 << LayerMask.NameToLayer("Player"));
     }
 
     //Main Tick loop
@@ -81,6 +86,8 @@ public class PlayerController : MonoBehaviour {
         //Check if player is climbing and move according to climb scheme (in y-x plane);
         if (bIsClimbing)
         {
+            if (cameraController.cameraControlState != CameraController.CameraControl.BodyLocked && cameraController.cameraControlState != CameraController.CameraControl.ScriptControlled)
+                cameraController.LockBody();
             Climb();
         }
         else
@@ -107,6 +114,12 @@ public class PlayerController : MonoBehaviour {
                 AirMove();
             }
         }
+
+        if(overridenAddVelocity)
+        {
+            m_MoveVector += addMoveVector;
+            overridenAddVelocity = false;
+        }
         charController.Move(m_MoveVector * Time.fixedDeltaTime);
         b_WasGroundedLastFrame = charController.isGrounded;
     }
@@ -117,7 +130,7 @@ public class PlayerController : MonoBehaviour {
         if (charController.isGrounded && inputY < 0)
         {
             Drop();
-            AddVelocity(transform.forward * -2, m_MoveSpeed);
+            AddVelocity(transform.forward * -2);
         }
         if (drop)
         {
@@ -132,27 +145,29 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            Drop();
+            if(!bBeingPutInDescentPos && cameraController.cameraControlState != CameraController.CameraControl.ScriptControlled)
+                Drop();
         }
     }
     //Climbing Functions
     private void SearchForClimbableSurface()
     {
         RaycastHit hit;
-        if (bIsTouchingClimbable && Physics.Raycast(transform.position, transform.forward, out hit, 2))
+        if (bIsTouchingClimbable && Physics.Raycast(transform.position, transform.forward, out hit, 3))
         {
             if (hit.collider.CompareTag("Climbable"))
-            {
-                    bIsClimbing = true;
-                    bIsTouchingClimbable = false;
+            {             
+                bIsClimbing = true;
+                bIsTouchingClimbable = false;
             }
         }
     }
     private bool IsStillOnClimbableWall()
     {
         RaycastHit hit;
-        Debug.DrawRay(transform.position, transform.forward,Color.blue);
-        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        Ray ray = new Ray(transform.position, transform.forward);
+        Debug.DrawRay(transform.position, transform.forward * 2,Color.blue);
+        if (Physics.Raycast(ray, out hit, 3, playerBitmask, QueryTriggerInteraction.Ignore))
         {
             return hit.collider.CompareTag("Climbable");
         }
@@ -165,7 +180,7 @@ public class PlayerController : MonoBehaviour {
     {
         RaycastHit hit;
         //All but the player layer
-        int playerBitmask = ~(1 << LayerMask.NameToLayer("Player"));
+
 
         Ray ray = new Ray(transform.position, (transform.forward + transform.up / 5).normalized);
         Debug.DrawRay(ray.origin, ray.direction, Color.red);
@@ -188,9 +203,8 @@ public class PlayerController : MonoBehaviour {
     }
     private void ClimbLedge(Vector3 ledgePoint)
     {
-        Vector3 target = ledgePoint + transform.up * 2 + transform.forward * 3;
-        Vector3 addVec = target - transform.position;
-        AddVelocity(addVec, 5);
+        Vector3 addVec = transform.up * 15 + transform.forward * 5;
+        AddVelocity(addVec * 2);
         Drop();
 
         ////Using Old method of Tweening player to proper position is very choppy
@@ -203,11 +217,12 @@ public class PlayerController : MonoBehaviour {
     }
     private void Drop()
     {
-        if (!bIsClimbing)
+        if (!bIsClimbing || bBeingPutInDescentPos)
         {
             drop = false;
             return;
         }
+        StartCoroutine(cameraController.FreeBody());
         bIsClimbing = false;
         drop = false;
     }
@@ -216,31 +231,38 @@ public class PlayerController : MonoBehaviour {
     {
         if (!bIsTouchingClimbable)
             return false;
-        int playerBitmask = ~(1 << LayerMask.NameToLayer("Player"));
+
+        bool isUnder = false;
         RaycastHit hit;
-        Ray ray = new Ray(transform.position, transform.up * -1);
-        if (Physics.Raycast(ray, out hit, 2, playerBitmask, QueryTriggerInteraction.Collide))
+        
+        for(int i = 0; i < 6; i++)
         {
-            if(hit.collider.CompareTag("Climbable"))
+            float value = Mathf.InverseLerp(0, 5, i);
+            Ray ray = new Ray(transform.position, transform.up * -1 + transform.forward * Mathf.Cos(value * Mathf.PI * 2) + transform.right * Mathf.Sin(value * Mathf.PI * 2));
+            if (Physics.Raycast(ray, out hit, 2, playerBitmask, QueryTriggerInteraction.Collide))
             {
-                currentLedgeMarker = hit.collider.GetComponent<LedgeMarker>();
-                return true;
+                if (hit.collider.CompareTag("Climbable"))
+                {
+                    currentLedgeMarker = hit.collider.GetComponent<LedgeMarker>();
+                    isUnder = true;
+                }
             }
         }
-        return false;
+        return isUnder;
     }
 
     private IEnumerator MovePlayerToDescentPosition()
     {
+        bBeingPutInDescentPos = true;
         Debug.Log("In coroutine");
         receivesInput = false;
         Vector3 pos = currentLedgeMarker.GetLedgePosition().position;
 
-        cameraController.LookAtTransform(currentLedgeMarker.GetLedgeLook().position, 1f);
-
+        cameraController.LookAtTransform(currentLedgeMarker.GetLedgeLook().position, 0.8f);
+        
         Queue<TweenToWaypoint> qt = new Queue<TweenToWaypoint>();
-        TweenToWaypoint t1 = new TweenToWaypoint(new Vector3(pos.x, transform.position.y + 0.4f, pos.z), 0.3f);
-        TweenToWaypoint t2 = new TweenToWaypoint(pos, 0.7f);
+        TweenToWaypoint t1 = new TweenToWaypoint(new Vector3(pos.x, transform.position.y, pos.z), 0.5f);
+        TweenToWaypoint t2 = new TweenToWaypoint(pos, 0.5f);
         qt.Enqueue(t1);
         qt.Enqueue(t2);
 
@@ -249,6 +271,7 @@ public class PlayerController : MonoBehaviour {
         bIsClimbing = true;
 
         receivesInput = true;
+        bBeingPutInDescentPos = false;
     }
 
     //Read input from Input class
@@ -362,11 +385,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     //Use with care, directly modifies the vector used by Move function
-    private void AddVelocity(Vector3 addVector, float maxSpeed)
+    private void AddVelocity(Vector3 addVector)
     {
-        m_MoveVector += addVector;
-        if(m_MoveVector.magnitude > maxSpeed)
-        m_MoveVector = m_MoveVector.normalized * maxSpeed;
+        overridenAddVelocity = true;
+        addMoveVector = addVector;
     }
 
     private struct TweenToWaypoint
@@ -386,7 +408,7 @@ public class PlayerController : MonoBehaviour {
         while(waypoints.Count != 0)
         {
             TweenToWaypoint waypoint = waypoints.Dequeue();
-            yield return StartCoroutine(TweenToPosition(go, waypoint.destination, waypoint.duration, AnimationCurve.EaseInOut(0,0,1,1)));
+            yield return StartCoroutine(TweenToPosition(go, waypoint.destination, waypoint.duration, AnimationCurve.Linear(0,0,1,1)));
         }
 
     }
@@ -402,7 +424,8 @@ public class PlayerController : MonoBehaviour {
             float percent = Mathf.Clamp01(journey / duration);
             float curvePercent = animCurve.Evaluate(percent);
             go.position = Vector3.Lerp(go.position, destination, curvePercent);
-
+            if ((destination - go.position).sqrMagnitude < 0.0025f)
+                break;
             yield return null;
         }
     }

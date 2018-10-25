@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour {
     {
         PlayerControlled,
         ScriptControlled,
+        BodyLocked,
         Disabled
     }
 
@@ -15,6 +16,8 @@ public class CameraController : MonoBehaviour {
     private float sensitivity;
     [SerializeField]
     private float minX, maxX;
+    [SerializeField]
+    private float minY, maxY; //Used for BodyLocked mode
 
     public CameraControl cameraControlState = CameraControl.Disabled;
 
@@ -24,6 +27,8 @@ public class CameraController : MonoBehaviour {
     //internal variables
     private float xRotation, yRotation;
     private Transform lookAtTarget;
+
+    private float oldYRot = 0;
 	// Use this for initialization
 	void Start ()
     {
@@ -58,8 +63,18 @@ public class CameraController : MonoBehaviour {
         transform.localRotation = Quaternion.Euler(xRotation, 0, transform.localRotation.eulerAngles.z);
 
     }
-	// Update is called once per frame
-	void FixedUpdate ()
+    private void SetRotationBodyLock()
+    {
+        xRotation = Normalize(xRotation);
+        yRotation = Normalize(yRotation);
+
+        xRotation = Mathf.Clamp(xRotation, minX, maxX);
+        yRotation = Mathf.Clamp(yRotation, minY, maxY);
+
+        transform.localRotation = Quaternion.Euler(xRotation, yRotation, transform.localRotation.eulerAngles.z);
+    }
+    // Update is called once per frame
+    void FixedUpdate ()
     {
         switch(cameraControlState)
         {
@@ -69,6 +84,10 @@ public class CameraController : MonoBehaviour {
                 break;
             case CameraControl.ScriptControlled:
 
+                break;
+            case CameraControl.BodyLocked:
+                GetInput();
+                SetRotationBodyLock();
                 break;
             case CameraControl.Disabled:
                 break;
@@ -91,10 +110,28 @@ public class CameraController : MonoBehaviour {
         cameraControlState = CameraControl.PlayerControlled;
     }
 
-    public void LookAtTransform(Vector3 tr, float time = 1)
+    public void LockBody()
+    {
+        if (cameraControlState == CameraControl.ScriptControlled)
+            return;
+        oldYRot = yRotation;
+        yRotation = 0;
+        cameraControlState = CameraControl.BodyLocked;
+    }
+
+    public IEnumerator FreeBody()
     {
         cameraControlState = CameraControl.ScriptControlled;
-        StartCoroutine(LookAt(tr, time, AnimationCurve.EaseInOut(0, 0, 1, 1)));
+        yield return StartCoroutine(LookAt(xRotation, -0.1f, 0.5f, CameraControl.BodyLocked));
+        cameraControlState = CameraControl.PlayerControlled;
+        yRotation = oldYRot;
+    }
+
+    public void LookAtTransform(Vector3 tr, float time = 1)
+    {
+        StartCoroutine(LookAt(tr, time, cameraControlState, AnimationCurve.EaseInOut(0, 0, 1, 1)));
+        cameraControlState = CameraControl.ScriptControlled;
+
     }
 
 
@@ -104,7 +141,7 @@ public class CameraController : MonoBehaviour {
         yRotation = y;
     }
 
-    private IEnumerator LookAt(Vector3 tr, float time, AnimationCurve animCurve = null)
+    private IEnumerator LookAt(Vector3 tr, float time, CameraControl previousState, AnimationCurve animCurve = null)
     {
         if (animCurve == null)
             animCurve = AnimationCurve.Linear(0, 0, 1, 1);
@@ -132,9 +169,55 @@ public class CameraController : MonoBehaviour {
 
             xRotation = Mathf.Lerp(startXRot, endXRot, percentCurve);
             yRotation = Mathf.Lerp(startYRot, endYRot, percentCurve);
-            SetRotation();
+            if (previousState == CameraControl.PlayerControlled)
+                SetRotation();
+            else if (previousState == CameraControl.BodyLocked)
+                SetRotationBodyLock();
         }
-        cameraControlState = CameraControl.PlayerControlled;
+        cameraControlState = previousState;
+    }
+
+    private IEnumerator LookAt(float x, float y, float time, CameraControl previousState, AnimationCurve animCurve = null)
+    {
+        
+        if (animCurve == null)
+            animCurve = AnimationCurve.Linear(0, 0, 1, 1);
+
+        float speed = 1 / time;
+        float interp = 0;
+
+        float startXRot = transform.localRotation.eulerAngles.x;
+        float startYRot;
+        if (previousState != CameraControl.BodyLocked)
+        {
+            startYRot = playerTransform.localRotation.eulerAngles.y;
+        }
+        else
+        {
+            startYRot = transform.localRotation.eulerAngles.y;
+        }
+        while (interp <= time)
+        {
+            yield return null;
+
+            float endXRot = x;
+            float endYRot = y;
+            interp += Time.smoothDeltaTime;
+            float percent = Mathf.Clamp01(interp / time);
+            float percentCurve = animCurve.Evaluate(percent);
+
+            CalculateShortestPathRotation(ref startXRot, ref endXRot, startXRot, endXRot);
+            CalculateShortestPathRotation(ref startYRot, ref endYRot, startYRot, endYRot);
+            xRotation = Mathf.Lerp(startXRot, endXRot, percentCurve);
+            yRotation = Mathf.Lerp(startYRot, endYRot, percentCurve);
+            if (previousState == CameraControl.PlayerControlled)
+                SetRotation();
+            else if (previousState == CameraControl.BodyLocked)
+            {
+                SetRotationBodyLock();
+            }
+        }
+        cameraControlState = previousState;
     }
 
     private void CalculateShortestPathRotation(ref float newStart, ref float newEnd, float start, float end)
