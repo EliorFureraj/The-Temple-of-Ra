@@ -24,6 +24,7 @@ PlayerController supports climbing ladders or any vertical surface with the appr
 Look at function for the CameraController for cinematic and gameplay purposes implemented.
 
 TODO (Organized by priority):
+- Implement GOAP.
 - Mummy Priest AI (Command lesser mummies and use Health/Blood to modify Mummies)
         - Commands Normal mummies.
        		 - Normal mummies disregard personal safety to defend Priest.
@@ -43,7 +44,6 @@ TODO (Organized by priority):
   - Sound when they are chasing you (an angry groan)
 - Make all mummies turn to sand when they die.
 
-- Replace FSM AI with GOAP.
 - Add a tutorial for the game.
 - Add something on top of Watchtower, so players aren't so dissapointed.
 
