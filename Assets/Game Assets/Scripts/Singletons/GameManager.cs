@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour {
 	{
         player.GetComponent<PlayerController>().receivesInput = true;
         player.GetComponent<GunAndMeleeSystem>().enabled = true;
-		player.transform.Find("Body").GetComponent<InputManager>().isActive = true;
+        player.transform.Find("Body").GetComponent<StrafingLean>().SetActive(true);
         camController.cameraControlState = CameraController.CameraControl.PlayerControlled;
 
         StartCoroutine("Delay");
@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour {
 	{
         player.GetComponent<PlayerController>().receivesInput = false;
         player.GetComponent<GunAndMeleeSystem>().enabled = false;
-		player.transform.Find("Body").GetComponent<InputManager>().isActive = false;
+		player.transform.Find("Body").GetComponent<StrafingLean>().SetActive(false);
         camController.cameraControlState = CameraController.CameraControl.Disabled;
         AudioListener.volume = 0f;
 	}

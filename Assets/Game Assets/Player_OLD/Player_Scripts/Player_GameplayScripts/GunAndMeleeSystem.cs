@@ -18,7 +18,7 @@ public class GunAndMeleeSystem : MonoBehaviour
     public GameObject mainCamera;
     public GameObject handCamera;
     public LayerMask layermask;
-    private FirstPersonController fpController;
+    private PlayerController fpController;
     private PlayerStats stats;
     private MeleeCollisionDetection meleeDetection;
     private GameObject muzzleFlash;
@@ -63,7 +63,7 @@ public class GunAndMeleeSystem : MonoBehaviour
     {
         PlayerDependencyManager pdm = GetComponent<PlayerDependencyManager>();
         stats = GetComponent<PlayerStats>();
-        fpController = GetComponent<FirstPersonController>();
+        fpController = GetComponent<PlayerController>();
         tr = transform;
         hands = transform.Find("Body/Hands").gameObject;
         muzzleFlash = transform.Find("Body/Hands/handSocket_r/GunMesh/MuzzleFlash").gameObject;
@@ -99,7 +99,7 @@ public class GunAndMeleeSystem : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.P))
         {
             cheat = !cheat;
-            fpController.CheatMode(cheat);
+            //fpController.CheatMode(cheat);
             stats.cheatMode = cheat;
             if (cheat)
             {
@@ -123,10 +123,10 @@ public class GunAndMeleeSystem : MonoBehaviour
         animator.SetBool("isWalking", isWalking);
         //animator.SetLayerWeight(animator.GetLayerIndex("Walk"), isWalking ? Mathf.Lerp(0, 1, 0.1f*Time.deltaTime) : Mathf.Lerp(1, 0, 0.1f * Time.deltaTime));
 
-        if (turnSway > 25)
-            turnSway = 25;
-        if (turnSway < -25)
-            turnSway = -25;
+        if (turnSway > 10)
+            turnSway = 10;
+        if (turnSway < -10)
+            turnSway = -10;
         if (turnSway < 0)
             turnSway += swayRestoreSpeed * Time.deltaTime;
         if (turnSway > 0)

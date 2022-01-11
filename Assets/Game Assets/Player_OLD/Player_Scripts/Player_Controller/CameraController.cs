@@ -45,7 +45,7 @@ public class CameraController : MonoBehaviour {
     {
         float deltaX = Input.GetAxis("Mouse Y");
         float deltaY = Input.GetAxis("Mouse X");
-        if (deltaX != 0 && deltaY != 0)
+        if (deltaX != 0 || deltaY != 0)
         {
             xRotation -= deltaX * sensitivity;
             yRotation += deltaY * sensitivity;
@@ -102,6 +102,12 @@ public class CameraController : MonoBehaviour {
             return f + 360f;
         else
             return f;
+    }
+
+
+    public float LookingUpPercentage()
+    {
+        return (Vector3.Dot(transform.forward, Vector3.up));
     }
 
     public void StopLookAt()

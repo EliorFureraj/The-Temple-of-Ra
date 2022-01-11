@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float m_ClimbControl = 0.1f;
     [SerializeField]
+    private float m_terminalVelocity = 56;
+    [SerializeField]
     private float m_MinAirSpeed = 1;
     [SerializeField]
     private float m_GravityMult = 1;
@@ -121,6 +123,7 @@ public class PlayerController : MonoBehaviour {
             overridenAddVelocity = false;
         }
         charController.Move(m_MoveVector * Time.fixedDeltaTime);
+        Debug.Log("Player Vel:\n" + Mathf.RoundToInt(m_MoveVector.x) + "," + Mathf.RoundToInt(m_MoveVector.y) + "," + Mathf.RoundToInt(m_MoveVector.z));
         b_WasGroundedLastFrame = charController.isGrounded;
     }
 
@@ -136,6 +139,7 @@ public class PlayerController : MonoBehaviour {
         {
             Drop();
         }
+
         if (IsStillOnClimbableWall())
         {
             if (IsNearLedge())
@@ -203,8 +207,8 @@ public class PlayerController : MonoBehaviour {
     }
     private void ClimbLedge(Vector3 ledgePoint)
     {
-        Vector3 addVec = transform.up * 15 + transform.forward * 5;
-        AddVelocity(addVec * 2);
+        Vector3 addVec = transform.up * 2 + transform.forward * 1;
+        AddVelocity(addVec);
         Drop();
 
         ////Using Old method of Tweening player to proper position is very choppy
@@ -272,6 +276,7 @@ public class PlayerController : MonoBehaviour {
 
         receivesInput = true;
         bBeingPutInDescentPos = false;
+        bIsTouchingClimbable = false;
     }
 
     //Read input from Input class
@@ -294,7 +299,7 @@ public class PlayerController : MonoBehaviour {
         Vector3 desiredVel = transform.forward * UnityEngine.Input.GetAxis("Vertical") + transform.right * UnityEngine.Input.GetAxis("Horizontal");
         Vector3 desiredDir = desiredVel.normalized;
         Vector3 previousMove = new Vector3(m_MoveVector.x, 0, m_MoveVector.z);
-
+        Vector3 previousMoveY = new Vector3(0, m_MoveVector.y, 0);
         //Add movement vector depending on how much air control we have
         Vector3 addMove;
         if (previousMove.magnitude > m_MinAirSpeed)
@@ -309,14 +314,14 @@ public class PlayerController : MonoBehaviour {
 
 
         //Add Gravity
-        nextMove += Physics.gravity * Time.fixedDeltaTime * m_GravityMult;
-
+        nextMove += previousMoveY + Physics.gravity * m_GravityMult * Time.fixedDeltaTime;
+        nextMove.y = Mathf.Min(nextMove.y, m_terminalVelocity);
         m_MoveVector = nextMove;
     }
     private void GroundMove()
     {
         Vector3 desiredVel = transform.forward * UnityEngine.Input.GetAxis("Vertical") + transform.right * UnityEngine.Input.GetAxis("Horizontal");
-        Vector3 desiredDir = desiredVel.normalized;
+        Vector3 desiredDir = Vector3.ClampMagnitude(desiredVel, 1f);
         Vector3 previousMove = new Vector3(m_MoveVector.x, 0, m_MoveVector.z);
 
         
@@ -354,8 +359,9 @@ public class PlayerController : MonoBehaviour {
     }
     private void ClimbMove()
     {
-        
-        Vector3 desiredVel = transform.up * UnityEngine.Input.GetAxis("Vertical") + transform.right * UnityEngine.Input.GetAxis("Horizontal");
+
+        int direction = (cameraController.LookingUpPercentage() < -0.7f ? -1 : 1);
+        Vector3 desiredVel = transform.up * direction * UnityEngine.Input.GetAxis("Vertical") + transform.right * UnityEngine.Input.GetAxis("Horizontal");
         Vector3 desiredDir = desiredVel.normalized;
 
         Vector3 nextMove = desiredDir * m_ClimbSpeed;
