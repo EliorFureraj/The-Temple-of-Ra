@@ -22,31 +22,3 @@ State:
 PlayerController and CameraController replaced Unity's default FPSController. These new scripts should be easier to modify and extend.
 PlayerController supports climbing ladders or any vertical surface with the appropriate tag. Press F while on top to climb down. 
 Look at function for the CameraController for cinematic and gameplay purposes implemented.
-
-TODO (Organized by priority):
-- Implement GOAP.
-- Mummy Priest AI (Command lesser mummies and use Health/Blood to modify Mummies)
-        - Commands Normal mummies.
-       		 - Normal mummies disregard personal safety to defend Priest.
-	- Can turn Normal Mummies to Angered versions in turn exchange for health.
-	- Can possess other mummies.
-	     - Possessed mummies are stronger but will stay out of harms way.
-	     - Once a possessed mummy dies, the Priest returns to previous form, minus health consumed for possession.
-	    
-- Make an 'angered' mummy version. Faster and stronger but is slowly depleted of health.
-      - Normal mummies appear in pairs. If one is killed the other is angered.
-      
-- Particle effects when mummies are shot or slashes (sand cloud thing)
-- Reacting animation when you shoot mummies or slash them. They exist, implement them.
-- Add sounds to mummies:
-  - Sounds when shot (sand pouring) + groan
-  - Sound when they first notice you (some sort of surprised groad)
-  - Sound when they are chasing you (an angry groan)
-- Make all mummies turn to sand when they die.
-
-- Add a tutorial for the game.
-- Add something on top of Watchtower, so players aren't so dissapointed.
-
-Future TODO:
-
-Learn Coptic (or find someone who speaks Coptic and get him/her to teach you), record self, modulate voice and use that in place of groans.
